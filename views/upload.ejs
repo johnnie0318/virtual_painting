@@ -1,0 +1,83 @@
+<upload-photo class="ng-scope ng-isolate-scope"><page-header backlinktext="Explore Different Photos" data-backurl="/" class="ng-isolate-scope"><div id="PageHeader">
+    <!-- ngIf: model.backlinktext --><a id="HeaderBackLink" ng-click="model.BackAction()" ng-if="model.backlinktext" gtm-event="['ux', 'backButton', model.backlinktext]" class="ng-scope ng-isolate-scope" data-t="ux" data-d1="backButton" data-d2="Explore Different Photos" style="">
+        <span id="HeaderLeftArrow" class="material-icons">keyboard_arrow_left</span>
+        <span id="HeaderBackLinkText" class="" data-url="/photo">Explorer différentes photos</span>
+    </a><!-- end ngIf: model.backlinktext -->
+    <h1 id="HeaderPageTitle" class=""></h1>
+    <!-- ngIf: model.subheadline -->
+</div></page-header>
+<div id="MainContentLeftPane" style="width: 100%">
+    <section id="UploadMainContent">
+        <div id="UploadPhotoDesktop">
+            <div id="UploadTop">
+                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" ng-class="model.termsChecked ? 'UploadCheckBoxChecked' : 'UploadCheckBoxUnchecked'" ng-click="model.UpdateCheckBox();" style=""></a>
+                <div id="UploadPhotoTerms">
+                    <span class="UploadRoboMedium " style="font-size: 14px;">J'accepte les termes et conditions d'utilisation</span>
+                </div>
+                <div id="UploadPhotoButton" class="" style="">
+                    <div id="UploadPhotoButtonContainer">
+                        <div id="UploadPhotoButtonIcon">
+                            <span class="material-icons" id="UploadPhotoImg">add_a_photo</span>
+                        </div>
+                        <div id="UploadPhotoText" class="">Sélectionner une photo à télécharger</div>
+                    </div>
+                </div>
+            </div>
+            <div id="UploadBottom">
+                <page-header headline="Tips for Uploading Your Photo" class="ng-isolate-scope">
+                    <div id="PageHeader">
+                        <h1 id="HeaderPageTitle" class="">Conseils pour vous aider à télécharger une photo valide</h1>
+                    </div>
+                </page-header>
+                <div id="UploadTips">
+                    <div id="UploadWellLit" class="UploadRoboMedium">
+                        <span class="UploadTipSpan ">Votre photo doit étre bien éclairée.</span>
+                        <div class="UploadTipImageLeft">
+                            <img ng-src="https://visualizecolor.blob.core.windows.net/voc/good.jpg" src="https://visualizecolor.blob.core.windows.net/voc/good.jpg">
+                        </div>
+                        <div class="UploadTipImageRight">
+                            <img ng-src="https://visualizecolor.blob.core.windows.net/voc/dark.jpg" src="https://visualizecolor.blob.core.windows.net/voc/dark.jpg">
+                            <div class="UploadTipDont">
+                                <span class="material-icons">not_interested</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="UploadWall" class="UploadRoboMedium">
+                        <span class="UploadTipSpan ">Votre photo doit étre prise entre 1m50 et 2m40 de votre mur.</span>
+                        <div class="UploadTipImageLeft">
+                            <img ng-src="https://visualizecolor.blob.core.windows.net/voc/good.jpg" src="https://visualizecolor.blob.core.windows.net/voc/good.jpg">
+                        </div>
+                        <div class="UploadTipImageRight">
+                            <img ng-src="https://visualizecolor.blob.core.windows.net/voc/tooFar.jpg" src="https://visualizecolor.blob.core.windows.net/voc/tooFar.jpg">
+                            <div class="UploadTipDont">
+                                <span class="material-icons">not_interested</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="UploadPhotoMobile">
+            <div id="UploadPhotoDivider"></div>
+            <page-header headline="Upload Your Own Photo" class="ng-isolate-scope">
+                <div id="PageHeader">
+                    <h1 id="HeaderPageTitle" class="">Upload Your Own Photo</h1>
+                </div>
+            </page-header>
+            <a class="material-icons UploadCheckBox UploadCheckBoxChecked" style=""></a>
+            <div id="UploadPhotoTerms">
+                <span class="UploadRoboMedium " style="font-size: 14px;">J'accepte les termes et conditions d'utilisation</span>
+            </div>
+            <div id="UploadPhotoButton" class="Active" style="">
+                <div id="UploadPhotoButtonContainer">
+                    <div id="UploadPhotoButtonIcon">
+                        <span class="material-icons" id="UploadPhotoImg">add_a_photo</span>
+                    </div>
+                    <div id="UploadPhotoText" class="">Sélectionner une photo à télécharger</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<input type="file" accept="image/*" style="left: 0px; top: 0px; height: 0px; width: 0px; position: absolute; visibility: hidden;" id="ImagePicker" local-image-selected="" data-path="/UploadPhotoResult">
+</upload-photo>

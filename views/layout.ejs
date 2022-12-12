@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Virtual Painting Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/css/core.min.css" rel="stylesheet">
+  <link href="/assets/css/material-icons.css" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/main.css" rel="stylesheet" type="text/css">
+  
+</head>
+<body class="fullScreenImage">
+  <main id="main">
+    <div id="HeaderBrandImage">
+        <div id="HeaderBrandImageContainer">
+            <div id="BrandImgDiv">
+                <img id="BrandImg" class="img" src="/image/logo.png">
+            </div>
+        </div>
+    </div>
+    
+  <% if(!isSubscribed) { %>
+    <div id="subScribeModal">
+        <h1>BIENVENUE</h1>
+        <input id="firstname" type="text" placeholder="NOM">
+        <input id="lastname" type="text" placeholder="PRÉNOM">
+        <input id="email" type="email" placeholder="EMAIL">
+        <button>ENVOYER</button>
+        <span class="SubscribeModalCloseBtn material-icons">close</span>
+        <!-- <div id="subScribeModalOverlay"></div> -->
+    </div>
+    <div id="subScribeModalBack"></div>
+  <% } %>
+    <!-- ======= Blog Section ======= -->
+    <div id="base">
+        <notification-pane level="page" class="notification-pane">
+            <div class="loading-overlay page">
+                <div class="loader">
+                    <div class="loading-color color-1"></div>
+                    <div class="loading-color color-2"></div>
+                    <div class="loading-color color-3"></div>
+                    <div class="loading-color color-4"></div>
+                </div>
+                <!--<div id="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>-->
+            </div>
+        </notification-pane>
+        
+        <div id="headerMenu" data-label="Header Menu" resizeheader="" class="" style="">
+            <div id="headerMenu_content">
+                <div id="roundCorner" data-label="Round Corner Background">
+                    <div id="roundCornerBackground">
+                        <div id="ActionBackToShop">
+                            <div id="nav-savedColRect" class="nav-backToShop plusOne">
+                                <span>
+                                    <span class="material-icons nav-whiteIcon nav-progressIcons nav-progressSelected">store</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="nav-dynamicMenu" clickoutside="">
+                            
+                            <div id="nav-menuTab" showmobilemenu="" class=" <%= stepInfo[0].current == 'current' ? 'Step1_4' : '' %>" style="">
+                                <div id="nav-menuTabIconText">
+                                    <span>
+                                        <i class="material-icons nav-progressIcons nav-progressSelected nav-whiteIcon" id="hamburgerIcon">menu</i>
+                                    </span>
+                                    <span class="nav-progressIcons nav-whiteIcon">Menu</span>
+                                </div>
+                            </div>
+                            <saved-colors id="savedColorsSection" class="fixedElement">
+                                <% if(stepInfo[0].current != 'current') {%>
+                                <div id="nav-savedColorsTab" class="" style="<%= isAdmin? 'display: none':''%>">
+                                    <div id="nav-savedColTabIconText">
+                                        <div id="nav-savedColRect" class="plusOne">
+                                            <span>
+                                                <span class="material-icons nav-whiteIcon nav-progressIcons nav-progressSelected">palette</span>
+                                            </span>
+                                            <span>
+                                                <span class="SavedColorCountNum"><%= isAdmin ? productList.length : savedData.length %></span>
+                                            </span>
+                                        </div>
+                                        <div id="nav-SavedColWrapText">
+                                            <span id="nav-savedColorsText" class="nav-progressIcons">Couleurs sauvegardées</span>
+                                        </div>      
+                                    </div>
+                                    <div id="SavedColorsModal" class="transitionProp" stickymodal="">
+                                        <div id="SavedColorsActionsContainer" class="">
+                                            <div id="SavedColorsActions" class="">
+                                                <% if(stepInfo[1].current == 'current' && !isAdmin) {%>
+                                                <div id="SavedColorsAction"class="One <%= stepInfo[2].allow %>">
+                                                    <a class="SavedColorsNextButton">
+                                                        <span class="SavedColorsNextButtonText">Peindre votre espace<span class="material-icons SavedColorsNextButtonIcon">navigate_next</span></span>
+                                                    </a>  
+                                                </div>
+                                                <%}%>
+                                                <% if(stepInfo[2].current == 'current') {%>
+                                                <div class="One">
+                                                    <div id="ActionSaveButton" class="ActionSaveButton">
+                                                        <span class="SavedColorsNextButtonText"><span id="ActionSaveButtonIcon" class="material-icons">save</span>Sauvegarder le projet</span>
+                                                    </div>
+                                                </div>
+                                                <div class="One">
+                                                    <div id="ActionOrderButton" class="ActionSaveButton">
+                                                        <span class="SavedColorsNextButtonText"><span id="ActionSaveButtonIcon" class="material-icons">book_online</span>Commander</span>
+                                                    </div>
+                                                </div>
+                                                <%}%>
+                                            </div>
+                                        </div>
+                                        <div id="SavedColorsList" scrollfade="model.PageData.Data.CurrentStep" class="" data-admin="<%=isAdmin%>">
+                                            <div id="SavedColorsFadeTop" style="height: 0px;"></div>
+                                            <% if (!isAdmin) {%>
+                                                <% for (i in savedData) {%>
+                                                <div class="SavedColorItem" style="" data-index="<%=i%>" data-id="<%=savedData[i].id%>" data-subtype="<%=savedData[i].subtype%>" data-src="<%=savedData[i].src%>">
+                                                    <div class="SavedColorData">
+                                                        <div class="SavedColor_Col" style="background-image: url(<%=savedData[i].src%>); background-size: contain;">
+                                                        </div>
+                                                        <div class="SavedColorInfo UploadRoboMedium">
+                                                            <p class="SavedColorName">
+                                                                <span class=""><%=savedData[i].title%></span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%}%>
+                                            <%} else {%>
+                                                <% for (idx in productList) {%>
+                                                    <div class="SavedColorItem" style="" data-index="<%= idx%>" data-id="<%= productList[idx].id%>" data-subtype="<%=!productList[idx].subtype ? 1 : productList[idx].subtype %>" data-src="<%= productList[idx].src%>">
+                                                        <div class="SavedColorData">
+                                                            <div class="SavedColor_Col" style="background-image: url(<%= productList[idx].src%>); background-size: contain;">
+                                                                <% if (idx == curIndex - 1) {%>
+                                                                <span id="SavedColor_ColCheck" class="material-icons" style="">check_circle</span>
+                                                                <%}%>
+                                                            </div>
+                                                            <div class="SavedColorInfo UploadRoboMedium">
+                                                                <p class="SavedColorName">
+                                                                    <span class=""><%= productList[idx].title%></span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="SavedColorDelete">
+                                                            <div class="SavedColorTrash material-icons">
+                                                                <span>delete</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <%}%>
+                                            <%}%>
+                                        </div>
+                                        <div id="SavedColorsFadeBottom" style="visibility: visible;"></div>      
+                                    </div>
+                                </div>
+                                <% } %>
+                            </saved-colors>
+                            <div id="progressBar" class="progressShow transitionProp nav-slideUp nav-menuItemsCount-3 <%= stepInfo[0].current == 'current' ? 'Step1_4' : '' %>" data-label="Progress Bar" style="">
+                                <div class="navigation-wrapper">
+                                    <nav class="primary-navigation" id="primary-navigation">
+                                        
+                                        <div id="nav-progressItems" class="nav-menuItemsCount-3" style="">
+                                            <a href="/photo" class="nav-progressStep nav-menuItemsCount-3 nav-1Step" data-d2="1" style="">
+                                                <div class="nav-progressInfo nav-mobileItem">
+                                                    <div class="nav-circle <%= stepInfo[0].current %>" style="">1</div>
+                                                </div>
+                                                <div class="nav-centerInfo">
+                                                    <span class="nav-progressText <%= stepInfo[0].allow %>" style="">Sélectionner une photo</span>
+                                                </div>
+                                            </a>
+                                            <a href="<%= stepInfo[1].allow == 'enabled' && !isAdmin ? '/color' : '' %>" class="nav-progressStep nav-menuItemsCount-3 nav-2Step" data-d2="2" style="">
+                                                <div class="nav-progressInfo nav-mobileItem">
+                                                    <div class="nav-circle <%= stepInfo[1].current %>" style="">2</div>
+                                                </div>
+                                                <div class="nav-progressLine <%= stepInfo[1].allow %>" style=""></div>
+                                                <div class="nav-centerInfo">
+                                                    <span class="nav-progressText <%= stepInfo[1].allow %>" style="">Sélectionner une couleur</span>
+                                                </div>
+                                            </a>
+                                            <a href="<%= stepInfo[2].allow == 'enabled' && !isAdmin ? '/room' : '' %>" class="nav-progressStep nav-menuItemsCount-3 nav-3Step" data-d2="3" style="">
+                                                <div class="nav-progressInfo nav-mobileItem">
+                                                    <div class="nav-circle <%= stepInfo[2].current %>" style="">3</div>
+                                                </div>
+                                                <div class="nav-progressLine <%= stepInfo[2].allow %>" style=""></div>
+                                                <div class="nav-centerInfo">
+                                                    <span class="nav-progressText <%= stepInfo[2].allow %>" style="">Visualiser le résultat</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="BodyContainer">
+            <div id="BodyDisplayContainer">
+                <div id="BodyMainContainer" waiting-icon="" autoscroll="true" class="" style="">
+                    <%- body %>
+                </div>
+
+                <notification-footer class="">
+                <div id="LoaderNotificationPane" class="HidePane"></div>
+                <div id="NotificationFooter" class="" style="">
+                    <% if(stepInfo[0].current != 'current') {%>
+                    <div id="NotificationFooterActions" class="">
+                        <% if(stepInfo[1].current == 'current' && !isAdmin) {%>
+                        <div id="" class= "One ActionNextButton <%= stepInfo[1].allow %>">
+                            <a class="SavedColorsNextButton ReviewPhotoBuyClass">
+                                <span class=" SavedColorsNextButtonText">Peindre votre espace<span class="material-icons  SavedColorsNextButtonIcon">navigate_next</span></span>
+                            </a>
+                        </div>
+                        <%}%>
+                        <% if(stepInfo[2].current == 'current') {%>
+                        <div id="" class="One ActionSaveButton">
+                            <div id="ActionSaveButton">
+                                <span class="SavedColorsNextButtonText"><span id="ActionSaveButtonIcon" class="material-icons">save</span>Sauvegarder le projet</span>
+                            </div>
+                        </div>
+                        <div class="One ActionSaveButton">
+                            <div id="ActionOrderButton">
+                                <span class="SavedColorsNextButtonText"><span id="ActionSaveButtonIcon" class="material-icons">book_online</span>Commander</span>
+                            </div>
+                        </div>
+                        <%}%>
+                    </div>
+                    <%}%>
+                </div>
+                
+                </notification-footer>
+
+                <footer id="FooterContainer">
+                    <div>
+                        <p class="copyright ">Copyright 2021. All Rights Reserved.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div><!-- End Blog Section -->
+
+  </main><!-- End #main -->
+
+    <!-- Vendor JS Files -->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js" type="text/javascript"></script>
+    <!-- <script src="/assets/js/main.js"></script> -->
+    <script>
+        var globalCurColorIdx = 0;
+        var savedProductData = [];
+    </script>
+    <script src="/js/script.js"></script>
+
+    <% if(stepInfo[2].current == 'current') {%>
+        <script data-main="/js/main.js" src="/js/require.js"></script>
+    <%} else {%>
+        <script>
+            $(".notification-pane").hide();
+        </script>
+    <%}%>
+    
+</body>
+
+</html>

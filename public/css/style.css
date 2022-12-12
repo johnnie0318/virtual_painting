@@ -1,0 +1,1082 @@
+@media (min-width: 970px) {
+    .fullScreenImage {
+        background: url('../image/background.jpg') no-repeat center center fixed; /*https://visualizecolor.blob.core.windows.net/voc/main_background.jpg*/
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}
+
+#BodyContainer {
+    z-index: -1;
+}
+
+#BrandImg {
+    /* box-shadow: 0px 0px 15px 15px rgb(255 255 255 / 80%); */
+    /* background-color: rgba(255,255,255,0.8); */
+}
+
+#BrandImgDiv {
+    height: auto;
+}
+
+#HeaderBrandImage{
+    background-color: #4d1a1a;
+    height: 180px;
+    z-index: -1;
+}
+
+@media (min-width: 970px) {
+    #HeaderBrandImage{
+        background-color: transparent;
+    }
+}
+
+#headerMenu {
+    top: 0;
+}
+
+@media (max-width: 750px) {
+    #progressBar {
+        left: -142px;
+    }
+}
+
+/* .stepBackColor {
+    background-color: #b8964e ;
+}
+
+.componentBackColor {
+    background-color: #4d1a1a !important;
+} */
+
+.SavedColorItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(min-width:200px){
+    #StockPhotoZoomIn{
+        position:absolute;
+        top:59px;
+        right:12px;
+        z-index:1;
+    }
+
+    #StockPhotoZoomOut{
+        position:absolute;
+        top:59px;
+        right:42px;
+        z-index:1;
+    }
+}
+
+@media(min-width:750px){
+    #StockPhotoZoomIn{
+        position:relative;
+        top:0;
+        left:-5px;
+    }
+
+    #StockPhotoZoomOut{
+        position:relative;
+        top:0;
+        left:-5px;
+    }
+}
+
+.UploadButton, .LoginButton{
+    width:80%;
+    height:80px;
+    border-radius:8px;
+    cursor:default;
+    pointer-events:none;
+    background-color:#f0f0f0;
+    box-shadow:0 1px 0 0 #ccc inset;
+    -webkit-box-shadow:0 -1px 0 0 #ccc inset;
+    position:relative;
+    float:right;
+    display:table;
+    transition:all linear .2s;
+}
+
+.UploadButton div{
+    color:rgba(51,51,51,.2);
+}
+
+.UploadButton.Active #UploadText{
+    color:#fff;
+}
+
+.UploadButton.Active #UploadButtonIcon
+{
+    color:#633;
+}
+
+.UploadButton.Active{
+    background-color:#4d1a1a;
+    box-shadow:0 -1px 0 0 #ad8a8a inset;
+    -webkit-box-shadow:0 -1px 0 0 #ad8a8a inset;
+    cursor:pointer;
+    pointer-events:all;
+}
+
+.UploadButton:hover.Active{
+    background-color:#ad8a8a;
+}
+
+#UploadMainContent {
+    height: auto;
+}
+
+#UploadText{
+    font-size:24px;
+    font-weight:700;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+#UploadButtonIcon{
+    display:table-cell;
+    vertical-align:middle;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#UploadImg{
+    font-size:32px;
+    font-weight:400;
+    font-style:normal;
+}
+
+#UploadDivider{
+    border-color:#ccc;
+    border-bottom-width:1px;
+    border-style:dashed;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#UploadButtonContainer{
+    display:table;
+    height:100%;
+    margin:0 auto;
+    position:relative;
+}
+
+#UploadActionContainer .UploadButton{
+    width: 30%;
+}
+
+#UploadActionContainer{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.ProductTypes{
+    margin-left: 30px;
+    display: block;
+    /* float: left; */
+    margin-bottom: 15px;
+}
+
+.ProductTypeLeft{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+}
+
+.ProductTypeRight{
+    flex: 0.5;
+}
+
+#UploadProductTypeContainer{
+    height: 200px;
+    display: flex;
+}
+
+#UploadProductTypeContainer h4{
+    margin-bottom: 20px;
+}
+
+.UploadPreview{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100%;
+    width:100%;
+}
+
+.UploadPreview span{
+    color:#ff1e00;
+    font-size:100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.ProductPreviewHidden {
+    visibility: hidden;
+    min-height: 100px;
+}
+
+.ProductPreviewHidden span {
+    visibility: hidden;
+}
+
+.ColorFamilyFamilies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ColorItem {
+    margin: 10px 30px;
+    text-align: center;
+}
+
+#ColorFamSelector {
+    display: block;
+    float: none;
+    margin: 0;
+    border-radius: 3px;
+}
+
+@media(min-width:750px){
+    #ColorFamSelector {
+        width: 80px;
+        height: 60px;
+    }
+    #ColorFamSelector span {
+        top: 20px;
+        left: -1px;
+    }
+}
+
+@media(max-width:750px){
+    #ColorFamSelector {
+        width: 50px;
+        height: 40px;
+    }
+    #ColorFamSelector span {
+        top: 10px;
+        left: 0px;
+    }
+    
+    #roundCorner{
+        height: 55px;
+    }
+    #headerMenu{
+        height: 55px;
+        z-index: 0;
+    }
+    #FooterContainer{
+        padding-top: 80px;
+    }
+}
+
+#ColorFamSelector:hover span{
+    transition:visibility .2s linear;
+    -webkit-transition:visibility .2s linear;
+    -moz-transition:visibility .2s linear;
+    visibility: visible;
+}
+
+.ColorFamilyFamilies .ColorItem{
+    margin: 10px 0px !important;
+    width: 25%;
+}
+
+.ColorFamilyFamilies .ColorItem #ColorFamSelector{
+    margin: auto !important;
+}
+
+@media (min-width: 1170px) {
+    #ColorFamSelector {
+        width: 100px;
+        height: 60px;
+    }
+    
+    .ColorFamilyFamilies .ColorItem{
+        margin: 10px 40px;
+    }
+}
+
+#ColorFamilyColorsList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#ColorSwatch {
+    display: block;
+    float: none;
+    margin: 0;
+}
+
+#ColorSwatch:hover span{
+    transition:opacity .2s linear;
+    -webkit-transition:opacity .2s linear;
+    -moz-transition:opacity .2s linear;
+    opacity:1;
+}
+
+.SavedColorInfo {
+    margin-top: 10px;
+}
+
+#SavedColorsList .SavedColorName {
+    width: 170px;
+}
+
+@media (min-width: 970px) {
+    #SavedColorsList .SavedColorName {
+        width: 110px;
+    }
+}
+
+@media (min-width: 1170px) {
+    #SavedColorsList .SavedColorName {
+        width: 150px;
+    }
+}
+
+.nav-progressInfo{
+    position:absolute;
+    width:30px;
+}
+.nav-progressText{
+    /* color:#64686d; */
+    color:#fff;
+    font-family:"Roboto-Medium","Roboto Medium","Roboto";
+    font-weight:500;
+    font-style:normal;
+    font-size:13px;
+    width:100%;
+    display:inline-block;
+    position:relative;
+}
+.nav-progressText.enabled{
+    color:#fff;
+}
+.nav-centerInfo{
+    width:65%;
+    position:absolute;
+    left:50px;
+}
+.nav-progressContainer{
+    position:absolute;
+    margin:auto;
+}
+.nav-progressLine.enabled{
+    background-color:#fff;
+}
+.nav-progressLine{
+    background-color:#64686d;
+    cursor:pointer;
+    z-index:-1;
+}
+.nav-circle{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    font-size:12px;
+    text-align:center;
+    line-height:26px;
+    z-index:1;
+    left:20px;
+    top:10px;
+    position:relative;
+    /* color:rgb(189, 183, 183);
+    background:#64686d; */
+    color:#333;
+    background:#fff;
+    box-shadow:0 0 0 3px #b8964e;
+}
+.nav-progressStep:hover .nav-circle.enabled,.nav-circle.current{
+    color:#fff;
+    background:#4d1a1a;
+}
+.nav-circle.enabled{
+    color:#333;
+    background:#fff;
+}
+
+@media(min-width:200px){
+    .nav-progressText{
+        padding-left:10px;
+        padding-top:5px;
+        text-align:left;
+    }
+    .nav-centerInfo{
+        top:10px;
+    }
+    .nav-progressContainer{
+        height:150px;
+        width:1px;
+        top:10%;
+        left:10%;
+    }
+    .nav-progressLine{
+        position:absolute;
+        height:100%;
+        width:1px;
+        left:32px;
+        top:-50%;
+    }
+}
+
+@media(min-width:750px){
+    .nav-progressInfo{
+        position:relative;
+        margin:auto;
+        width:50%;
+    }
+    .nav-progressText{
+        padding-left:0;
+        padding-top:14px;
+        text-align:center;
+    }
+    .nav-centerInfo{
+        position:relative;
+        top:10px;
+        left:0;
+        margin:auto;
+        width:100%;
+        z-index:10;
+    }
+    .nav-progressContainer{
+        height:1px;
+        width:98%;
+        top:27px;
+        display:inline-block;
+        left:13%;
+    }
+    .nav-progressLine{
+        position:relative;
+        float:left;
+        height:1px;
+        width:100%;
+        top:2px;
+        left:-50%;
+        float:left;
+    }
+    .nav-circle{
+        display:inline-block;
+        left:0;
+        top:0;
+    }
+}
+
+.nav-mobileItem{
+    position:relative;
+}
+
+@media(min-width:750px){
+    .nav-mobileItem{
+        width:100%;
+        margin:auto;
+        text-align:center;
+        top:14px;
+    }
+}
+
+input[type=password], select {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+    height: 50px;
+    font-size: 15px;
+    outline-width: 0;
+    padding: 10px;
+}
+
+.LoginButton div{
+    color:rgba(51,51,51,.2);
+}
+
+.LoginButton.Active #UploadText{
+    color:#fff;
+}
+
+.LoginButton.Active #UploadButtonIcon
+{
+    color:#633;
+}
+
+.LoginButton.Active{
+    background-color:#4d1a1a;
+    box-shadow:0 -1px 0 0 #ad8a8a inset;
+    -webkit-box-shadow:0 -1px 0 0 #ad8a8a inset;
+    cursor:pointer;
+    pointer-events:all;
+}
+
+.LoginButton:hover.Active{
+    background-color:#ad8a8a;
+}
+
+.ColorSelectorSwatch{
+    width: 50px;
+}
+
+#ActionOrderButton {
+    cursor: pointer;
+    background-color: #999;
+    -moz-box-shadow: 0 -1px 0 0 #666 inset;
+    -webkit-box-shadow: 0 -1px 0 0 #666 inset;
+    box-shadow: 0 -1px 0 0 #666 inset;
+    border-radius: 8px;
+    min-width: 140px;
+    height: 50px;
+    font-size: 15px;
+    position: relative;
+    font-family: "Roboto-Medium","Roboto Medium","Roboto";
+    font-weight: 500;
+    font-style: normal;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+@media (min-width: 970px) {
+    #ActionOrderButton {
+        width: 170px;
+    }
+}
+
+@media (min-width: 1170px) {
+    #ActionOrderButton {
+        width: 190px;
+    }
+}
+
+@media (min-width: 200px) {
+    #NotificationFooterActions {
+        justify-content: center;
+    }
+
+    #NotificationFooterActions #ActionOrderButton {
+        margin-top: 0;
+        margin-left: 5px;
+    }
+}
+
+#ActionBackToShop {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 8px;
+}
+
+#nav-dynamicMenu {
+    width: calc(100% - 70px);
+    margin-left: 71px;
+    margin-right: 0;
+}
+
+@media (min-width: 970px) {
+    #nav-savedColorsTab {
+        margin-left: calc(100% - 246px);
+    }
+}
+
+@media (min-width: 1170px) {
+    #nav-savedColorsTab {
+        margin-left: calc(100% - 296px);
+        width: 296px;
+    }
+}
+
+#progressBar {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+}
+
+@media (min-width: 750px) {
+    #progressBar {
+        width: calc(74% - 70px);
+    }
+    #progressBar.Step1_4 {
+        width: calc(100% - 70px);
+    }
+    #ActionBackToShop {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 390px) {
+    #nav-SavedColWrapText {
+        display: none;
+    }
+}
+
+.nav-backToShop {
+    width: 66px !important;
+    height: 40px !important;
+    cursor: pointer;
+}
+
+.nav-backToShop:hover {
+    background-color: #a57171 !important;
+}
+
+#ActionOrderButton.Active .SavedColorsNextButtonText{
+    color:#fff;
+}
+
+#ActionOrderButton.Active #ActionSaveButtonIcon
+{
+    color:#633;
+}
+
+#ActionOrderButton.Active{
+    background-color:#4d1a1a;
+    box-shadow:0 -1px 0 0 #ad8a8a inset;
+    -webkit-box-shadow:0 -1px 0 0 #ad8a8a inset;
+    cursor:pointer;
+    pointer-events:all;
+}
+
+#ActionOrderButton:hover.Active{
+    background-color:#ad8a8a;
+}
+
+#ActionOrderButton:hover.Active #ActionSaveButtonIcon{
+    color:#4d1a1a;
+}
+
+#NotificationFooter #ActionOrderButton.Active .SavedColorsNextButtonText{
+    color:#fff;
+}
+
+#NotificationFooter #ActionOrderButton.Active #ActionSaveButtonIcon
+{
+    color:#633;
+}
+
+#NotificationFooter #ActionOrderButton.Active{
+    background-color:#4d1a1a;
+    box-shadow:0 -1px 0 0 #ad8a8a inset;
+    -webkit-box-shadow:0 -1px 0 0 #ad8a8a inset;
+    cursor:pointer;
+    pointer-events:all;
+}
+
+#NotificationFooter #ActionOrderButton:hover.Active{
+    background-color:#ad8a8a;
+}
+
+#NotificationFooter #ActionOrderButton:hover.Active #ActionSaveButtonIcon{
+    color:#4d1a1a;
+}
+
+#TileImage {
+    background-size: cover;
+    height: 90px;
+    object-fit: cover;
+}
+
+#TileCell {
+    margin-bottom: 25px;
+}
+
+@media (min-width: 750px) {
+    #TileImage {
+        height: 200px;
+    }
+}
+
+@media (min-width: 970px) {
+    #TileImage {
+        height: 125px;
+    }
+}
+
+@media (min-width: 1170px) {
+    #TileImage {
+        height: 150px;
+    }
+}
+
+#PhotoChooser {
+    margin-top: 20px;
+}
+
+#PhotoChooser img{
+    position: absolute;
+    top: 0;
+}
+
+#ThumbnailChooser {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #999;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    /* width: 100%; */
+}
+
+@media (min-width: 970px) {
+    #ThumbnailChooser {
+        /* width: 75%; */
+    }
+}
+
+#ThumbnailChooser img{
+    position: absolute;
+    top: 0;
+}
+#ThumbnailChooser .TileText, #ThumbnailChooser .TileDesc{
+    margin-left: 25px;
+    margin-right: 12px;
+    margin-bottom: 5px;
+    width: -webkit-fill-available;
+}
+#ThumbnailChooser .TileItem{
+    position: relative;
+    margin-bottom: 10px;
+}
+#ThumbnailChooser .TiltTextUpdateBtn, #ThumbnailChooser .TiltDescUpdateBtn{
+    border-radius: 3px;
+    position: absolute;
+    background-color: #4d1a1a;
+    font-size: 20px;
+    color: white;
+}
+
+.TileEditIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-18px, -18px);
+    background-color: white;
+    opacity: 0.6;
+    border: 4px solid white;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.HasText {
+    position: relative;
+}
+
+#ThumbnailChooser a:hover span {
+    visibility: visible;
+}
+
+#ThumbnailChooser h4 {
+    margin-bottom: 10px;
+}
+
+.ColorItem .SavedColorName {
+    margin-top: 10px;
+}
+
+#subScribeModal {
+    width: 500px;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), url('/image/modalback.jpg');
+    background-size: cover;
+    /* border-radius: 15px; */
+    /* box-shadow: 0 0 40px 5px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    justify-content: space-evenly;
+    padding: 20px;
+    font-family: 'Montserrat';
+    z-index: 1000;
+}
+/* 
+#subScribeModalOverlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    z-index: -1;
+} */
+
+#subScribeModalBack {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+#subScribeModal h1 {
+    grid-column: 1 / span 2;
+    width: 180px;
+    margin: auto;
+    font-size: xx-large;
+    text-align: center;
+    color: white;
+    /* text-shadow: 1px 1px 3px #000; */
+    font-family: 'Montserrat';
+}
+
+#subScribeModal input {
+    width: 140px;
+    margin: auto;
+    font-size: large;
+    text-align: left;
+    padding-left: 10px;
+    height: 50px;
+    border: none;
+    /* border-radius: 7px; */
+    /* border-color: #723b3b; */
+    background-color: #4d1a1a;
+    color: white;
+    font-family: 'Montserrat';
+}
+
+#subScribeModal input::placeholder {
+    color: lightgray;
+}
+
+#subScribeModal #email {
+    grid-column: 1 / span 2;
+    width: 100%;
+    /* border-color: #9b7e41; */
+}
+
+#subScribeModal button {
+    grid-column: 1 / span 2;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    border: none;
+    /* border-radius: 7px; */
+    /* border-color: #723b3b; */
+    background-color: #4d1a1a;
+    color: white;
+    font-size: large;
+    font-family: 'Montserrat';
+}
+
+#subScribeModal button:hover {
+    background-color: #884141;
+}
+
+@media (max-width: 400px) {
+    #subScribeModal input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #subScribeModal {
+        width: 90%;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+    }
+    #subScribeModal input {
+        grid-column: 1 / span 2;
+        width: 100%;
+    }
+}
+
+#nav-savedColorsTab #nav-savedColRect span {
+    font-size: 15px;
+}
+
+#AdminTabDiv {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-content: end;
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+#AdminTabDiv button {
+    height: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #999;
+    border-color: white;
+    border-bottom-color: transparent;
+    color: white;
+    font-size: 18px;
+}
+
+#AdminTabDiv button.IsActive {
+    background-color: #4d1a1a;
+}
+
+.AdminPageHeader {
+    margin-bottom: 0 !important;
+}
+
+.AdminHeaderPageTitle {
+    margin-bottom: 25px !important;
+}
+
+#ColorTabDiv {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-content: end;
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+#ColorTabDiv button {
+    height: 60px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #999;
+    border-color: white;
+    border-bottom-color: transparent;
+    color: white;
+    font-size: 12px;
+}
+
+#ColorTabDiv button.IsActive {
+    background-color: #4d1a1a;
+}
+
+#PaletteTabDiv {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-content: end;
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+#PaletteTabDiv button {
+    height: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #999;
+    border-color: white;
+    border-bottom-color: transparent;
+    color: white;
+    font-size: 15px;
+}
+
+#PaletteTabDiv button.IsActive {
+    background-color: #4d1a1a;
+}
+
+#CustomerTableContainer table {
+    width: 100%;
+    border: 3px solid #4d1a1a;
+}
+
+#CustomerTableContainer th, tr, td {
+    height: 40px;
+    border: 1px solid #4d1a1a;
+    font-size: 15px;
+    padding: 7px;
+}
+
+#CustomerTableContainer th {
+    background-color: #4d1a1a;
+    color: white;
+    border-right: 1px solid white;
+}
+
+.UserTableDeleteBtn:hover {
+    color: gray;
+    cursor: pointer;
+}
+
+.SubscribeModalCloseBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #4d1a1a;
+    border: 2px solid #4d1a1a;
+    color: white;
+    /* border-radius: 5px; */   
+    cursor: pointer;    
+}
+
+.SubscribeModalCloseBtn:hover {
+    background-color: #632a2a;
+}
+
+.loading-overlay.page {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.TileCell .TileEditIcon {
+    top: 37%;
+    left: 48%;
+}
+
+#UploadPhotoDesktop {
+    display: block;
+}
+
+#UploadPhotoMobile {
+    display: none;
+}
+
+#UploadWellLit {
+    width: 100%;
+    border-right: none;
+    margin-bottom: 40px;
+}
+
+#UploadWall {
+    width: 100%;
+}
+
+@media (min-width: 750px) {
+    #UploadWellLit {
+        width: 50%;
+        border-right: dotted;
+    }
+
+    #UploadWall {
+        width: 50%;
+    }
+}
+
+#TileCell h4 {
+    padding: 9px 5% 9px 5%;
+}
+
+#TileCell h3 {
+    padding: 12px 5% 1px 5%;
+    font-size: 80%;
+    overflow-wrap: break-word;
+    min-height: 75px;
+}
+
+@media (min-width: 750px) {
+    #TileCell h4 {
+        padding: 9px 5% 9px 5%;
+    }
+
+    #TileCell h3 {
+        padding: 13px 5% 1px 5%;
+        min-height: 60px;
+    }
+}

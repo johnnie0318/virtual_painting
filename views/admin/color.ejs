@@ -1,0 +1,220 @@
+<colors class="ng-scope ng-isolate-scope">
+    <page-header headline="Find Colors for Your Photo" backlinktext="Select a Different Photo" data-backurl="/" class="ng-isolate-scope">
+        <div id="PageHeader" class="AdminPageHeader">
+            <a id="HeaderBackLink" ng-if="model.backlinktext" gtm-event="['ux', 'backButton', model.backlinktext]" class="ng-scope ng-isolate-scope" data-t="ux" data-d1="backButton" data-d2="Select a Different Photo">
+                <span id="HeaderLeftArrow" class="material-icons">keyboard_arrow_left</span>
+                <span id="HeaderBackLinkText" class="ng-binding" data-url="/">Exit from Admin Page</span>
+            </a>
+            <div id="AdminTabDiv">
+                <button class="IsActive" data-idx="1">User Info</button>
+                <button data-idx="2">Site Setting</button>
+                <button data-idx="3">Product Manage</button>
+            </div>
+        </div>
+    </page-header>
+    <div id="MainContentLeftPane" style="width: 100%;">
+        <section id="UploadMainContent">
+            <div id="adminTab1">
+                <h1 id="HeaderPageTitle" class="AdminHeaderPageTitle">Customer Info Manage</h1>
+                <div id="CustomerTableContainer">
+                    <table>
+                        <tr>
+                            <th style="width: 20%">FirstName</th>
+                            <th style="width: 20%">SecondName</th>
+                            <th>Email</th>
+                            <th>SubscribeAt</th>
+                            <th style="width: 15%"></th>
+                        </tr>
+                        <% for(i in userList) { %>
+                            <tr>
+                                <td><%=userList[i].firstname%></td>
+                                <td><%=userList[i].lastname%></td>
+                                <td><%=userList[i].email%></td>
+                                <td><%=timeStrings[i]%></td>
+                                <td data-email="<%=userList[i].email%>">
+                                    <span class="UserTableDeleteBtn material-icons">delete</span>
+                                </td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </div>
+            </div>
+            <div id="adminTab2" style="display: none;">
+                <h1 id="HeaderPageTitle" class="AdminHeaderPageTitle">Change Site Settings</h1>
+                <div id="ThumbnailChooser" data-label="Room Chooser">
+                    <h4>Edit library thumbnails</h4>
+                    <div id="TileContainer">
+                        <% for(var idx=1;idx<=8;idx++) {%>
+                            <a>
+                                <div class="TileItem">
+                                    <div id="TileCell" class="TileCell" data-thm="<%=idx%>">
+                                        <div id="TileImageLoading" class="">
+                                            <img id="TileImage" scroll-loaded-image="" src="/img/library/<%=idx%>.jpg" alt="">
+                                        </div>
+                                        <span class="TileEditIcon material-icons">edit</span>
+                                    </div>
+                                    <span class="TiltTextUpdateBtn material-icons">update</span>
+                                    <input class="TileText" class="" value="<%=libraryTitle[idx-1]%>">
+                                    <span class="TiltDescUpdateBtn material-icons">update</span>
+                                    <input class="TileDesc" class="" value="<%=libraryDesc[idx-1]%>">
+                                </div>
+                            </a>
+                        <%}%>
+                    </div>
+                    <div id="HomeOrHorizontalLine">
+                        <div id="HomeOrDiv">
+                            <span id="HomeOrSpan" class="ng-binding"></span>
+                        </div>
+                    </div>
+                    <h4>Edit color thumbnails</h4>
+                    <div id="TileContainer">
+                        <a  data-d2="Living Room">
+                            <div class="TileItem" data-text="Living Room">
+                                <div id="TileCell" class="TileCell" data-thm="9">
+                                    <div id="TileImageLoading" class="">
+                                        <img id="TileImage" scroll-loaded-image="" src="/img/families.jpg" alt="">
+                                    </div>
+                                    <span class="TileEditIcon material-icons">edit</span>
+                                </div>
+                                <span class="TiltTextUpdateBtn material-icons">update</span>
+                                <input class="TileText" class="" value="<%=libraryTitle[8]%>">
+                            </div>
+                        </a>
+                        <a data-d2="Bedroom">
+                            <div class="TileItem" data-text="Bedroom">
+                                <div id="TileCell" class="TileCell" data-thm="10">
+                                    <div id="TileImageLoading" class="">
+                                        <img id="TileImage" scroll-loaded-image="" src="/img/collections.jpg" alt="">
+                                    </div>
+                                    <span class="TileEditIcon material-icons">edit</span>
+                                </div>
+                                <span class="TiltTextUpdateBtn material-icons">update</span>
+                                <input class="TileText" class="" value="<%=libraryTitle[9]%>">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="">
+                    <div id="ProductTitleContainer">
+                        <span class="UploadTipSpan ">Password</span>
+                        <input type="password" class="" style="font-size: 14px;" />
+                    </div>
+                    <div id="ProductTitleContainer">
+                        <span class="UploadTipSpan ">Confirm Password</span>
+                        <input type="password" class="" style="font-size: 14px;" />
+                    </div>
+                </div>
+                <div id="UploadBottom">
+                    <div id="UploadTips">
+                        <div id="UploadActionContainer" class="">
+                            <div id="PasswordChangeButton" class="LoginButton Active" style="">
+                                <div id="UploadButtonContainer">
+                                    <div id="UploadButtonIcon">
+                                        <span class="material-icons" id="UploadImg">restart_alt</span>
+                                    </div>
+                                    <div id="UploadText" class="">Change</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="adminTab3" style="display: none;">
+                <h1 id="HeaderPageTitle" class="AdminHeaderPageTitle">Update Your Own Products</h1>
+                <div id="">
+                    <div id="ProductTitleContainer">
+                        <span class="UploadTipSpan ">Product Title</span>
+                        <input type="text" class="UploadRoboMedium " style="font-size: 14px;" />
+                    </div>
+                    <div id="ProductIdContainer">
+                        <span class="UploadTipSpan ">Product ID</span>
+                        <input type="text" class="UploadRoboMedium " style="font-size: 14px;" />
+                    </div>
+                </div>
+                <div id="">
+                    <div>
+                        <span class="UploadTipSpan ">Product Type</span>
+                    </div>                
+                    <div id="UploadProductTypeContainer" class="">
+                        <div class="ProductTypeLeft">
+                            <h4>PEINTURE: </h4>
+                            <div id="" class="ColorTypeChecker ProductTypes" data-sub="1">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxChecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Couleurs Historiques</span>
+                            </div>
+                            <div id="" class="ColorTypeChecker ProductTypes" data-sub="2">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Couleurs India Mahdavi</span>
+                            </div>
+                            <div id="" class="ColorTypeChecker ProductTypes" data-sub="3">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Couleurs The Socialite Family</span>
+                            </div>
+                            <div id="" class="ColorTypeChecker ProductTypes" data-sub="4">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Couleurs Madeleine Castaing</span>
+                            </div>
+                        </div>
+                        <div class="ProductTypeRight">
+                            <h4>PAPIER PEINT: </h4>
+                            <div id="" class="PaletteTypeChecker ProductTypes" data-sub="5">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Collection I</span>
+                            </div>
+                            <div id="" class="PaletteTypeChecker ProductTypes" data-sub="6">
+                                <a class="material-icons UploadCheckBox UploadCheckBoxUnchecked" style=""></a>
+                                <span class="UploadRoboMedium" style="font-size: 14px;">Carré D'or</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="UploadTop">
+                    <div>
+                        <span class="UploadTipSpan ">Product Preview</span>
+                    </div>                
+                    <div id="">
+                        <div id="UploadWellLit" class="UploadRoboMedium">
+                            <div id="ProductPreview" class="UploadTipImageLeft">
+                                <img src="" class=" ProductPreviewHidden" data-src="">
+                                <div class="UploadPreview">
+                                    <span class="material-icons">not_interested</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="UploadWall" class="UploadRoboMedium">
+                            <div id="UploadButton" class="Active UploadButton" style="">
+                                <div id="UploadButtonContainer">
+                                    <div id="UploadButtonIcon">
+                                        <span class="material-icons" id="UploadImg">add_a_photo</span>
+                                    </div>
+                                    <div id="UploadText" class="">Upload</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="UploadTop">
+                    <div id="UploadTips">
+                        <div id="UploadActionContainer" class="">
+                            <div id="SubmitButton" class="UploadButton" style="">
+                                <div id="UploadButtonContainer">
+                                    <div id="UploadButtonIcon">
+                                        <span class="material-icons" id="UploadImg">save</span>
+                                    </div>
+                                    <div id="UploadText" class="">Add</div>
+                                </div>
+                            </div>
+                            <div id="ResetButton" class="Active UploadButton" style="">
+                                <div id="UploadButtonContainer">
+                                    <div id="UploadText" class="">Reset</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <input type="file" accept="image/*" style="left: 0px; top: 0px; height: 0px; width: 0px; position: absolute; visibility: hidden;" id="ProductImagePicker" local-image-selected="" data-path="/UploadPhotoResult">
+    <input type="file" accept="image/*" style="left: 0px; top: 0px; height: 0px; width: 0px; position: absolute; visibility: hidden;" id="ThumbnailPicker" local-image-selected="" data-path="/UploadPhotoResult">
+</colors>

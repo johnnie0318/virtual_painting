@@ -1,0 +1,29 @@
+<color-collections>
+    <page-header headline="View Curated Palettes" backlinktext="Explore Different Colors" data-backurl="/Colors">
+        <div id="PageHeader">
+            <a id="HeaderBackLink">
+                <span id="HeaderLeftArrow" class="material-icons">keyboard_arrow_left</span>
+                <span id="HeaderBackLinkText" data-url="/color">Précédent</span>
+            </a>
+            <h1 id="HeaderPageTitle">Parcourir nos papiers peints</h1>
+        </div>
+    </page-header>
+    <div id="MainContentLeftPane">
+        <div id="PaletteTabDiv">
+            <button class="IsActive" data-idx="5">Collection I</button>
+            <button data-idx="6" class="">Carré D'or</button>
+        </div>
+        <div id="ColorFamilyColorsList">
+            <% for (idx in productList) {%>
+            <div class="ColorItem columns count-7" style="" data-index="<%= idx%>" data-id="<%= productList[idx].id%>" data-subtype="<%= productList[idx].subtype%>" data-src="<%= productList[idx].src%>">
+                <div id="ColorSwatch" class="IsDark" style="background-image: url(<%= productList[idx].src%>); background-size: contain;">  
+                    <span class="material-icons isDark">check_circle</span>
+                </div>
+                <p class="SavedColorName">
+                    <span class=""><%= productList[idx].title%></span>
+                </p>
+            </div>
+            <%}%>
+        </div>
+    </div>
+</color-collections>

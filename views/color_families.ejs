@@ -1,0 +1,35 @@
+<color-families>
+    <page-header class="color-family-header" headline="Browse Paint Colors" subheadline="Beiges" backlinktext="Explore Different Colors" data-backurl="/Colors">
+        <div id="PageHeader" class="AdminPageHeader">
+            <a id="HeaderBackLink">
+                <span id="HeaderLeftArrow" class="material-icons">keyboard_arrow_left</span>
+                <span id="HeaderBackLinkText" data-url="/color">Précédent</span>
+            </a>
+            <h1 id="HeaderPageTitle">Parcourir nos couleurs</h1>
+        </div>
+    </page-header>
+    <div id="MainContentLeftPane">
+        <div id="ColorFamilyFamilies">
+            <div id="ColorTabDiv">
+                <button class="IsActive" data-idx="1">Couleurs Historiques</button>
+                <button data-idx="2" class="">Couleurs India Mahdavi</button>
+                <button data-idx="3" class="">Couleurs The Socialite Family</button>
+                <button data-idx="4" class="">Couleurs Madeleine Castaing</button>
+            </div>
+            
+            <!-- <span id="HeaderPageSubTitle">Beiges</span> -->
+            <div id="colorTab3" class="ColorFamilyFamilies">
+                <% for (idx in productList) {%>
+                <div class="ColorItem" style="" data-index="<%= idx%>" data-id="<%= productList[idx].id%>" data-subtype="<%= productList[idx].subtype%>" data-src="<%= productList[idx].src%>">
+                    <a id="ColorFamSelector" class="" style="background-image: url(<%= productList[idx].src%>); background-size: contain;">
+                        <span class="material-icons isDark">check_circle</span>
+                    </a>
+                    <p class="SavedColorName">
+                        <span class=""><%= productList[idx].title%></span>
+                    </p>
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</color-families>

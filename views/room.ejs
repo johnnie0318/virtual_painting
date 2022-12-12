@@ -1,0 +1,65 @@
+<stock-photo>
+    <page-header data-backurl="/Colors" >
+        <div id="PageHeader">
+            <a id="HeaderBackLink">
+                <span id="HeaderLeftArrow" class="material-icons">keyboard_arrow_left</span>
+                <span id="HeaderBackLinkText" class="" data-url="/color">Trouver plus de couleurs</span>
+            </a>
+            <h1 id="HeaderPageTitle" class="">Visualiser votre espace</h1>
+            <span id="HeaderPageSubTitle" class="" style="">Cliquer sur le mur à peindre avec la couleur sélectionnée</span>
+        </div>
+    </page-header>
+    <div id="MainContentLeftPane">
+        <div id="StockPhotoSelectedColor">
+            <color-selector><span id="ColorSelectorSelectedColor" class=""></span>
+                <div id="ColorSelector">
+                    <div id="ColorSelectorContainer" style="">
+                        <% for (i in savedData) {%>
+                        <div class="ColorSelectorSwatch" data-index="<%=i%>" data-id="<%=savedData[i].id%>" data-src="<%=savedData[i].src%>" style="background-image: url(<%=savedData[i].src%>); background-size: contain;">
+                        </div>
+                        <%}%>
+                    </div>
+                </div>
+                </color-selector>
+        </div>
+        <div id="StockPhotoMain">
+            <div id="StockPhotoImg" style="position:relative;margin:0 auto;" data-source="<%= roomPhoto %>">
+            </div>
+            <div id="StockPhotoFooter" class="UploadRoboMedium">
+                <div id="StockPhotoReset" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">replay</span>
+                    <span class="ng-binding">réinitialiser</span>
+                </div>
+                <div id="StockPhotoUndo" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">undo</span>
+                    <span class="ng-binding">annuler</span>
+                </div>
+                <div id="StockPhotoRedo" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">redo</span>
+                    <span class="ng-binding">refaire</span>
+                </div>
+                <div id="StockPhotoPaint" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">format_paint</span>
+                    <span class="ng-binding">peinture</span>
+                </div>
+                <div id="StockPhotoPolygon" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">drive_file_rename_outline</span>
+                    <span class="ng-binding">Éditer la zone</span>
+                </div>
+                <div id="StockPhotoBrush" class="StockPhotoFooterItem left">
+                    <span class="material-icons StockPhotoIcon">brush</span>
+                    <span class="ng-binding">brosse</span>
+                </div>
+                <div id="StockPhotoZoomIn" class="StockPhotoFooterItem right">
+                    <span class="material-icons StockPhotoIcon">zoom_in</span>
+                </div>
+                <div id="StockPhotoZoomOut" class="StockPhotoFooterItem right">
+                    <span class="material-icons StockPhotoIcon">zoom_out</span>
+                </div>
+            </div>
+            <div id="StockPhotoChangeFooter" >
+                
+            </div>        
+        </div>   
+    </div>
+</stock-photo>

@@ -1,0 +1,54 @@
+<home class="ng-scope ng-isolate-scope"><div id="PhotoChooser" data-label="Room Chooser">
+  <h1 id="HomePageTitle" class="ng-binding">Sélectionner une photo</h1>
+
+
+  <div id="HomeUploadButtonHolder">
+      <a gtm-event="['ux', 'startPhotoType', 'userPhoto']" class="" data-t="ux" data-d1="startPhotoType" data-d2="userPhoto">
+          <div id="HomeUploadButton">
+              <div id="HomeUploadIcon">
+                  <span class="material-icons" id="HomeAddPhotoImg">add_a_photo</span>
+              </div>
+              <div id="HomeUploadText">
+                  <div id="HomeUploadHeader">
+                      <span class="ng-binding">Télécharger votre photo ici</span>
+                  </div>
+                  <div id="HomeUploadDesc">
+                      <span class="ng-binding"></span>
+                  </div>
+              </div>
+          </div>
+      </a>
+  </div>
+  <div id="HomeOrHorizontalLine">
+      <div id="HomeOrDiv">
+          <span id="HomeOrSpan" class="ng-binding">Ou</span>
+      </div>
+  </div>
+  <div id="HomeExploreHeader">
+      <span class="ng-binding">Télécharger la photo de votre choix</span>
+  </div>
+  
+  <div id="TileContainer">
+      <% for (var idx=1;idx<=8;idx++) {%>
+        <a data-src="/img/library/<%=idx%>.jpg">
+            <tile >
+                <div id="TileCell" class="HasText">
+                    <h4 name="TileText" class="ng-binding ng-scope"><%=libraryTitle[idx-1]%></h4>
+                    <div id="TileImageLoading" class="TileImage">
+                        <div class="TileImageLoader">
+                            <div class="imageLoading-color color-1"></div>
+                            <div class="imageLoading-color color-2"></div>
+                            <div class="imageLoading-color color-3"></div>
+                            <div class="imageLoading-color color-4"></div>
+                        </div>
+                        <img id="TileImage" scroll-loaded-image="" src="/img/library/<%=idx%>.jpg" alt="">
+                    </div>
+                    <h3 name="TileText" class="ng-binding ng-scope"><%=libraryDesc[idx-1]%></h3>
+                </div>
+            </tile>
+        </a>
+    <%}%>
+  </div>
+
+</div>
+</home>
